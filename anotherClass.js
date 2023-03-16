@@ -26,15 +26,18 @@ class Account {
 
   deposite(val) {
     this.#movements.push(val);
+    return this;
   }
   withdraw(val) {
     this.#movements.push(-val);
+    return this;
   }
 
   requestLoan(val) {
     if (this._approveLoan(val)) {
       this.deposite(val);
       console.log(`Loan approved`);
+      return this;
     }
   }
 
